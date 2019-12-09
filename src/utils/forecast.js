@@ -11,7 +11,7 @@ const forecast = (lati, long, callback) => {
       callback('Unable to find location', undefined)
     } else {
       callback(undefined, {
-        Summary: body.daily.data[0].summary + 'with temperature of ' + body.currently.temperature + ' Chances of Rain - '+ body.currently.precipProbability
+        Summary: body.daily.data[0].summary + ' With a temperature of ' + body.currently.temperature + '. Chances of Rain - ' + body.currently.precipProbability + '. With a humidity of -' + body.currently.humidity + '. With a MinTemperature - ' + body.daily.data[0].temperatureMin + ' & HighTemperature - ' + body.daily.data[0].temperatureMax
       })
     }
   })
