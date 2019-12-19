@@ -2,6 +2,7 @@ const request = require('request')
 
 const geoCode = (address, callback) => {
   const geoUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1IjoicmF2aXN3YW04NiIsImEiOiJjazNmY2p2ZnkwM2c2M21zMXFuNWZxNzl4In0.9AKMcrrP_q8wJ-z24bUELg&limit=1'
+  console.log('GeoCode URL -> ', geoUrl)
   request({ url: geoUrl, json: true }, (error, { body }) => {
     if (error) {
       callback('Unable to connect to Weather Service', undefined)
@@ -9,8 +10,8 @@ const geoCode = (address, callback) => {
       callback('Unable to locate the provided location', undefined)
     } else {
       callback(undefined, {
-        latitude: body.features[0].center[0],
-        longitude: body.features[0].center[1],
+        longitude: body.features[0].center[0],
+        latitude: body.features[0].center[1],
         placeName: body.features[0].place_name
       })
     }

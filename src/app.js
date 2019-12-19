@@ -28,7 +28,7 @@ app.get('', (req, res) => {
 })
 app.get('/about', (req, res) => {
   res.render('about', {
-    src: '/img/img_2214.jpg',
+    src: '/img/img_2214.png',
     name: 'Ravikumar',
     title: 'About Me'
   })
